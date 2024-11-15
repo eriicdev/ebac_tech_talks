@@ -1,0 +1,52 @@
+.hero{
+    padding-top: 64px;
+    padding-bottom: 100px;
+    background-image: url(../images/fundo.png);   //coloc. a img de fundo
+    background-repeat: no-repeat;   //disse p img n repetir
+    background-size: cover;     //ajustou para a img ficar do tam do cont.
+    position: relative; // prendendo o item preto apenas ao hero
+
+    .container{
+        position: relative; //fazendo com que os textos venhgam para cima do preto
+    }
+
+    &::before{
+        position:absolute;
+        top: 0;
+        left: 0;
+        width: 100%;//criando um elemento por cima da imagem para diminuir a opacidade da imagem de fundo.
+        height: 100%;
+        background-color: #000;
+        content: '';
+        opacity: 0.7; //falamos que a cor desse elemento vai apenas até 70%
+    }
+
+    &__text{
+        margin-top: 64px;
+        margin-bottom: 64px;
+        font-size: 40px;
+        line-height: 56px;
+        font-weight: 800;
+        text-align: center;
+    }
+
+    &__logo{
+        margin: 0 auto;
+        height: 80px;
+        display: block; //p centraliz so o marg. 0auto n da, tem q ter D-B
+    }
+
+    @media (max-width: 640px) {
+        padding: 40px 0;
+        
+        &__logo{
+            height: 40px;
+        }
+
+        &__text{
+            font-size: 22px;
+            line-height: 24px;
+            margin: 24px 0;
+        }
+    }
+}

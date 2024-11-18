@@ -1,0 +1,64 @@
+@use 'variables';
+
+.event {
+    padding: 80px 0;
+    
+    &--fronted{
+        background-image:linear-gradient(variables.$blue1, variables.$blue2); //na frente das cores é recomendado por a direção do gradiente, quando não colocamos igual eu fiz, ele fica aplicado na vertical.
+    }
+
+    &--ux-ui{
+        background-image:linear-gradient(variables.$blue2, variables.$pink); 
+    }
+
+    &--data-science{
+        background-image:linear-gradient(variables.$pink, variables.$yellow);
+    }
+
+    &--backend{
+        background-image:linear-gradient(variables.$yellow, variables.$pink); 
+    }
+
+    &--image-left{
+        .container{
+            flex-direction: row-reverse;  //usando isso para aplicarms apenas nas sections que quisermos em que a img vá na frente do texto, estamos invertendo a linha
+        }
+    }
+
+    .container{
+        display: flex;
+        gap: 40px;
+    }
+
+    &__image{
+        max-width: 360px;
+    }
+
+    &__detail{
+        &__title{
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 16px;
+        }
+
+        &__description{
+            font-size: 16px;
+            line-height: 22px;
+        }
+    }
+
+    @media (max-width: 640px) {
+        .container{
+            display: block;
+        }
+
+        &__image {
+            width: 100%;
+        }
+
+        &__detail{
+            margin-right: 0;
+            margin-bottom: 16px;
+        }
+    }
+}

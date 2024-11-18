@@ -1,3 +1,5 @@
+@use 'variables';
+
 .hero{
     padding-top: 64px;
     padding-bottom: 100px;
@@ -16,7 +18,7 @@
         left: 0;
         width: 100%;//criando um elemento por cima da imagem para diminuir a opacidade da imagem de fundo.
         height: 100%;
-        background-color: #000;
+        background-color: variables.$seondaryTextColor;
         content: '';
         opacity: 0.7; //falamos que a cor desse elemento vai apenas até 70%
     }

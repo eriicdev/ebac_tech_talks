@@ -1,3 +1,5 @@
+@use '../variables';
+
 .button{
     padding: 12px;
     font-size: 18px;
@@ -6,8 +8,8 @@
     white-space: nowrap;  //forçando o texto a nao quebrar e ficar na mesma linha
 
     &--primary{
-        color: #fff;
-        background-color: #4f2ac3;
+        color: variables.$textColor;
+        background-color: variables.$purple;
     }
 
     @media(max-width:640px){
